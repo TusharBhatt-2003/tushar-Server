@@ -13,7 +13,10 @@
   "author": "Tushar Bhatt",
   "license": "ISC",
   "dependencies": {
+    "backend": "file:",
+    "cat-me": "^1.0.3",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.21.1"
   }
 }

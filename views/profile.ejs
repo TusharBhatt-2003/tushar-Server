@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= gitHubData.name %>'s GitHub Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans h-screen grid place-items-center">
+  <div class="container w-4/5 sm:w-3/5 md:w-2/3 lg:w-1/2 p-6">
+    <div class="profile-header flex items-center justify-center bg-black  p-6 rounded-lg shadow-lg mb-8">
+      <img src="<%= gitHubData.avatar_url %>" alt="<%= gitHubData.name %>'s Avatar" class="rounded-full w-60 h-60 mr-6 border-2 border-white">
+    </div>
+
+    <div class="info flex justify-between flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 bg-black border-2 border-white p-6 rounded-lg shadow-lg">
+           <div class="flex justify-between flex-col">
+          <div>
+            <h1 class="text-3xl font-semibold mb-2"><%= gitHubData.name %></h1>
+            <p class="text-lg mb-2"><%= gitHubData.bio %></p>
+          </div>
+           <div>
+            <p>Location: <%= gitHubData.location %></p>
+            <p>Blog: <a href="https://<%= gitHubData.blog %>" class="text-gray-400 hover:text-white transition-colors"><%= gitHubData.blog %></a></p>
+            <p>GitHub Profile: <a href="<%= gitHubData.html_url %>" class="text-gray-400 hover:text-white transition-colors">View Profile</a></p>
+           </div>
+          </div>
+      <div class="info-left border-t border-l-0 md:pl-5 pt-2 md:pt-0 border-white md:border-l md:border-t-0">
+        <h2 class="text-2xl font-semibold mb-2">Stats</h2>
+        <p>Followers: <%= gitHubData.followers %></p>
+        <p>Following: <%= gitHubData.following %></p>
+        <p>Public Repositories: <%= gitHubData.public_repos %></p>
+        <p>Account Created: <%= new Date(gitHubData.created_at).toLocaleDateString() %></p>
+        <p>Last Updated: <%= new Date(gitHubData.updated_at).toLocaleDateString() %></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
